@@ -1,0 +1,200 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// * {
+//   outline: solid red 1px;
+// }
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.jumbotron {
+  background-image: image-url("/assets/otter_swimming.jpg");
+  background-size: cover;
+  border-radius: 0 !important;
+  height: 500px;
+  padding-top: 0;
+  text-align: center;
+
+  .navbar {
+    background: rgba(0,0,0,0);
+    margin-bottom: 0px;
+
+    .navbar-header {
+      padding-top: 5px;
+      padding-left: 150px;
+    }
+  }
+
+  .navbar-text {
+    color: lightgrey;
+  }
+
+  .navbar-right {
+    padding-right: 100px;
+    text-align: right;
+    width: 28%;
+
+    a {
+      color: lightgrey;
+    }
+
+    .navbar-form {
+      margin-top: 13px;
+    }
+  }
+
+  h1 {
+    color: white;
+    font-size: 6em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px black;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+}
+
+.title {
+
+  h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 4em;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+.post_button1 {
+  background-color: lightgrey;
+  border-radius: 0px;
+}
+
+#sidebar {
+
+  .img-circle {
+    background-color: grey;
+    width: 100px;
+  }
+
+  .username {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  #sidebar_header {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    margin-top: 35px;
+    text-transform: uppercase;
+  }
+
+}
+
+#most_popular {
+  border-top: lightgrey solid 1px;
+  border-bottom: lightgrey solid 1px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 5em;
+  font-weight: bolder;
+  margin-top: 80px;
+  padding: 0px;
+  text-align: center;
+  text-transform: uppercase;
+
+  p {
+    margin: 0px;
+  }
+}
+
+#bottom_row {
+  height: auto;
+  margin: 0;
+
+  .btn {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .popular {
+    height: auto;
+    padding: 0px;
+
+    .btn {
+      border: none;
+    }
+
+    .center-block {
+      background-size: cover;
+    }
+  }
+
+  .bottom_titles {
+    bottom: 0;
+    color: white;
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2.5em;
+    font-weight: bolder;
+    padding-left: 30px;
+    padding-right: 5px;
+    position: absolute;
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+    width: 100%;
+
+  }
+
+}
+
+footer {
+  background-color: black;
+  color: lightgrey;
+  height: 60px;
+  padding-top: 10px;
+
+  .footer {
+    margin: 0px;
+    padding-left: 200px;
+  }
+
+  .footer_row {
+    margin: 0px;
+  }
+
+  .bottom_text {
+    padding-top: 10px;
+    padding-left: 80px;
+  }
+
+  .bottom_logo {
+    height: auto;
+    width: 50px;
+  }
+
+  .bottom_nav {
+    display: inline-block;
+    // float: right;
+    // margin: 0px;
+    // padding: 0px;
+
+    .btn-group {
+      padding-top: 3px;
+    }
+
+    .btn {
+      background-color: black;
+      border: none;
+      color: lightgrey;
+    }
+  }
+
+}

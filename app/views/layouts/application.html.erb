@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Surfnpaddle</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  </head>
+
+
+<body>
+  <div class="jumbotron">
+
+    <nav class="navbar">
+      <div class="navbar-header">
+        <%= image_tag "logo.svg" %>
+      </div>
+      <p class="navbar-text">You Otter Know Blog</p>
+      <div class="navbar-right">
+        <p class="navbar-text"><%= link_to "About", "/about" %></p>
+        <form class="navbar-form">
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Search">
+            <i class="glyphicon glyphicon-search form-control-feedback"></i>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h1>You otter know</h1>
+      <h4>A whole lotter fun information for everyone</h4>
+    </div>
+  </div>
+
+    <%= yield %>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row footer_row">
+          <div class="col-md-1 footer">
+            FOOTER LOGO
+          </div>
+          <div class="col-md-6 bottom_text">
+            The Iron Yard, Copyright 2017, All Rights Reserved
+          </div>
+          <div class="col-offset-1 col-md-3 bottom_nav">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default">Nav 1</button>
+              <button type="button" class="btn btn-default">Nav 2</button>
+              <button type="button" class="btn btn-default">Nav 3</button>
+              <button type="button" class="btn btn-default">Nav 4</button>
+              <button type="button" class="btn btn-default">Nav 5</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  </body>
+
+</html>
