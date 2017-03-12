@@ -21,47 +21,57 @@
 
   .navbar {
     background: rgba(0,0,0,0);
+    font-family: 'Open Sans Condensed', sans-serif;
     margin-bottom: 0px;
 
     .navbar-header {
-      padding-top: 5px;
+      padding-top: 12px;
       padding-left: 150px;
     }
   }
 
   .navbar-text {
-    color: lightgrey;
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
   }
 
   .navbar-right {
-    padding-right: 100px;
+    margin: 0px;
+    padding-right: 130px;
     text-align: right;
     width: 28%;
 
     a {
-      color: lightgrey;
+      color: white;
     }
 
     .navbar-form {
-      margin-top: 13px;
+      padding-top: 5px;
     }
+
+
   }
 
   h1 {
     color: white;
-    font-size: 6em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 8em;
     font-weight: bolder;
+    margin-top: 100px;
     text-shadow: 2px 2px 2px black;
     text-transform: uppercase;
   }
 
   h4 {
     color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
     text-shadow: 1px 1px 1px black;
   }
 }
 
 .title {
+  padding-left: 15px;
 
   h2 {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -71,24 +81,116 @@
   }
 }
 
-.post_button1 {
-  background-color: lightgrey;
-  border-radius: 0px;
+.byline {
+  display: inline-block;
+  height: 30px;
+
+  img {
+    height: 25px;
+  }
+}
+
+.post_actions {
+  display: inline-block;
+  margin: 0px;
+
+  .glyphicon {
+    background-color: grey;
+    font-size: 22px;
+    padding: 4px;
+    top: 0px;
+  }
+
+  .glyphicon.third_glyph {
+    background-color: #4e6a96;
+  }
+
+  .glyphicon_button.third {
+    background-color: #709fea;
+  }
+
+  .glyphicon_button {
+    background-color: lightgrey;
+    border-radius: 0px;
+    height: 30px;
+    border: none;
+    margin-right: 10px;
+    padding: 0px;
+
+    .glyph {
+      height: 30px;
+
+      .glyph_text {
+        bottom: 7px;
+        display: inline-block;
+        font-family: 'Open Sans Condensed', sans-serif;
+        padding-left: 5px;
+        padding-right: 8px;
+        position: relative;
+      }
+
+    }
+  }
+
+  .glyphicon_button:hover {
+    background-color: grey;
+    opacity: 50%;
+  }
+
+  .post_button {
+    background-color: lightgrey;
+    border-radius: 0px;
+    height: 30px;
+    padding: 0px;
+
+  }
+
+  .button {
+    font-family: 'Open Sans Condensed', sans-serif;
+
+  }
+}
+
+blockquote {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.8em;
 }
 
 #sidebar {
 
   .img-circle {
     background-color: grey;
+    margin-top: 50px;
     width: 100px;
   }
 
   .username {
-    font-size: 18px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
     margin-top: 10px;
     text-align: center;
     text-transform: uppercase;
   }
+
+  .user_social {
+    ul {
+      font-family: 'Open Sans Condensed', sans-serif;
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0px 5px;
+    }
+  }
+
+  .ad img {
+      margin-top: 50px;
+      width: 100%;
+    }
+
 
   #sidebar_header {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -122,6 +224,10 @@
   .btn {
     margin: 0px;
     padding: 0px;
+  }
+
+  .popular:hover {
+    opacity: 0.5;
   }
 
   .popular {
@@ -161,8 +267,7 @@ footer {
   height: 60px;
   padding-top: 10px;
 
-  .footer {
-    margin: 0px;
+  .footer_logo {
     padding-left: 200px;
   }
 
@@ -175,16 +280,8 @@ footer {
     padding-left: 80px;
   }
 
-  .bottom_logo {
-    height: auto;
-    width: 50px;
-  }
-
   .bottom_nav {
     display: inline-block;
-    // float: right;
-    // margin: 0px;
-    // padding: 0px;
 
     .btn-group {
       padding-top: 3px;
