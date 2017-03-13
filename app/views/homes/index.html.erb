@@ -98,7 +98,7 @@
       <div class="col-md-3 popular">
         <span class="bottom_titles"><%= post.title %></span>
         <%= link_to post do %>
-          <%= image_tag post.image, class: "img-responsive center-block" %>
+          <% image_tag post.image || post.user.avatar, class: "img-responsive center-block" %>
         <% end %>
       </div>
     <% end %>
