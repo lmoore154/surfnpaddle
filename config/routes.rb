@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'homes#index'
   get '/posts/:id' => 'posts#show'
+  get '/about' => 'about#index'
 
   resources :posts
   resources :users

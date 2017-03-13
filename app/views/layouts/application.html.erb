@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>You Otter Know</title>
+    <title>You Otter Know | <%= content_for :title %> </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,11 +15,13 @@
 
     <nav class="navbar">
       <div class="navbar-header">
-        <%= image_tag "logo.svg" %>
+        <%= link_to "/" do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
       </div>
       <p class="navbar-text">You Otter Know Blog</p>
       <div class="navbar-right">
-        <p class="navbar-text"><%= link_to "About" %></p>
+        <p class="navbar-text"><%= link_to "About", "/about" %></p>
         <form class="navbar-form">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Search">
