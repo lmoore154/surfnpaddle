@@ -12,12 +12,12 @@
       <div class="row byline">
         <div class="col-md-12">
           <%= image_tag @user.avatar, class: "img-circle" %>
-          <%= link_to @user.username %> on <%= @post.created_at.strftime("%A, %B %d, %Y at %l:%M %p") %>
+          <%= link_to @user.username, @user %> on <%= @post.created_at.strftime("%A, %B %d, %Y at %l:%M %p") %>
         </div>
       </div>
       <div class="row post_body">
         <div class="col-md-12">
-          <%= render "posts/post" %>   <!--calls _post partial-->
+          <%= render partial: "posts/post", locals: { post: @post } %>   <!--calls _post partial; setting local variables in _post partial so that @post is not needed to render a post...needed for post#index -->
         </div>
       </div>
       <div class="row">
@@ -55,7 +55,7 @@
         <%= image_tag @user.avatar, class: "img-circle center-block img-responsive"%>
       </div>
       <div class="row username">
-        <%= link_to @user.username %>
+        <%= link_to @user.username, user_path(@user) %>
       </div>
       <div class="row user_social">
         <div class="col-md-12">
@@ -69,7 +69,7 @@
 
       <div class="row">
         <div class="col-md-12 ad">
-          <%= image_tag "ad#{rand(1..6)}" %>
+          <%= image_tag "ad#{rand(1..6)}.jpg" %>
         </div>
       </div>
 
@@ -89,6 +89,14 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 make_new_post">
+      <%= link_to "Make a new post", new_post_path, class: "btn btn-primary new_post_btn" %>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
   <div class="col-md-12" id="most_popular">
     <p>Most popular posts</p>
@@ -98,7 +106,7 @@
       <div class="col-md-3 popular">
         <span class="bottom_titles"><%= post.title %></span>
         <%= link_to post do %>
-          <%= image_tag post.image, class: "img-responsive center-block" %>
+          <% image_tag post.image || post.user.avatar, class: "img-responsive center-block" %>
         <% end %>
       </div>
     <% end %>

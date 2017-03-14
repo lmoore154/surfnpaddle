@@ -13,9 +13,9 @@ images = (1..15).to_a
 5.times do |o|
 
   user = User.create!(
-    username: Faker::Cat.name,
+    username: Faker::Cat.unique.name,
     bio: Faker::ChuckNorris.fact,
-    avatar: "otter#{o+1}"
+    avatar: "otter#{o+1}.jpg"
     )
 
   3.times do |i|
@@ -23,7 +23,7 @@ images = (1..15).to_a
       title: Faker::Book.title,
       body: Faker::Lorem.paragraphs(4).join("\n"),
       fact: @facts.sample,
-      image: "image#{images.shift}",
+      image: "image#{images.shift}.png",
       created_at: rand(1..10).days.ago
     )
   end

@@ -12,7 +12,7 @@
 }
 
 .jumbotron {
-  background-image: image-url("/assets/otter_swimming.jpg");
+  background-image: image-url("otter_swimming.jpg");
   background-size: cover;
   border-radius: 0 !important;
   height: 500px;
@@ -294,4 +294,18 @@ footer {
     }
   }
 
+}
+
+.make_new_post {
+  text-align: center;
+
+  .new_post_btn {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+}
+
+.post_body {
+  padding-bottom: 20px;
 }

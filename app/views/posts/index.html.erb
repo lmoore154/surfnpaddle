@@ -1,7 +1,15 @@
-<div class="row">
-  <div class="col-xs-9">
-    <% @posts.each do |post| %>
-      <%= render post %>
-    <% end %>
-  </div>
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-2 authors">
+        <%= link_to post.user.username do %>
+          <%= image_tag post.user.avatar, class: "img-circle posts_avatars" %>
+          <% end %>
+        <%= link_to post.user.username %>
+      </div>
+      <div class="col-md-offset-1 col-md-8">
+        <%= render post %>
+      </div>
+    </div>
+  <% end %>
 </div>
