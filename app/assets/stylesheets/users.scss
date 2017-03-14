@@ -1,3 +1,51 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo {
+  padding-bottom: 40px;
+  text-align: center;
+
+  .img-circle {
+    height: 250px;
+  }
+}
+
+.username {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 4em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.post_header {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 2em;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.posts {
+
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    text-align: center;
+  }
+}
+
+.edit {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.form {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 3em;
+  text-align: center;
+}

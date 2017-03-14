@@ -10,20 +10,28 @@
   </div>
 <%end%>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div>
-    <%= f.label :avatar %>
-    <%= f.text_field :avatar %>
-  </div>
-  <div>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div>
-    <%= f.submit class: "btn btn-primary"%>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 form">
+
+      <%= form_for @user do |f| %>
+        <div>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </div>
+        <div>
+          <%= f.label :avatar %>
+          <%= f.text_field :avatar %>
+        </div>
+        <div>
+          <%= f.label :bio %>
+          <%= f.text_area :bio %>
+        </div>
+        <div>
+          <%= f.submit class: "btn btn-primary"%>
+        </div>
 <% end %>
+    </div>
+  </div>
+
+</div>

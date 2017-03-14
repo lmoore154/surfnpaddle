@@ -21,9 +21,9 @@
   </div>
   <div>
     <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.map { |u| [u.username, u.id] } %>
+    <%= f.select :user_id, User.all.map { |u| [u.username, u.id] }, include_blank: true %>
   </div>
   <div>
-    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit class: "btn btn-success submit_post" %>
   </div>
 <% end %>

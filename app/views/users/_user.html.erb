@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 username">
+      <%= @user.username %>
+    </div>
+    <div class="col-md-9 post_header">
+      Posts by <%= @user.username %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 photo">
+      <%= image_tag @user.avatar, class: "img-circle" %>
+    </div>
+    <div class="col-md-9 posts">
+      <% @user.posts.each do |p| %>
+        <ul>
+          <li><%= link_to p.title, p %></li>
+        </ul>
+        <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 edit">
+      <%= link_to "Edit profile", edit_user_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  
+</div> <!--container-->

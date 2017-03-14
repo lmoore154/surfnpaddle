@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(id: params[:id])
   end
 
   def new
@@ -25,6 +26,17 @@ class UsersController < ApplicationController
       #   - "#{class_name}_path(id: thing.id)"
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :edit
     end
   end
 

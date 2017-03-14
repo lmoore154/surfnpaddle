@@ -49,4 +49,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body, :user_id)
   end
 
+  def most_popular
+  end
+
 end

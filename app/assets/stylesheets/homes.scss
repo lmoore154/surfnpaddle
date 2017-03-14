@@ -295,3 +295,17 @@ footer {
   }
 
 }
+
+.make_new_post {
+  text-align: center;
+
+  .new_post_btn {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+}
+
+.post_body {
+  padding-bottom: 20px;
+}

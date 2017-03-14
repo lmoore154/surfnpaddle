@@ -12,7 +12,7 @@
       <div class="row byline">
         <div class="col-md-12">
           <%= image_tag @user.avatar, class: "img-circle" %>
-          <%= link_to @user.username %> on <%= @post.created_at.strftime("%A, %B %d, %Y at %l:%M %p") %>
+          <%= link_to @user.username, @user %> on <%= @post.created_at.strftime("%A, %B %d, %Y at %l:%M %p") %>
         </div>
       </div>
       <div class="row post_body">
@@ -55,7 +55,7 @@
         <%= image_tag @user.avatar, class: "img-circle center-block img-responsive"%>
       </div>
       <div class="row username">
-        <%= link_to @user.username %>
+        <%= link_to @user.username, "users/#{@user.id}" %>
       </div>
       <div class="row user_social">
         <div class="col-md-12">
@@ -86,6 +86,12 @@
 
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 make_new_post">
+    <%= link_to "Make a new post", new_post_path, class: "btn btn-primary new_post_btn" %>
   </div>
 </div>
 
