@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :find_user, only: [:show, :edit, :update]
+  before_action :require_user, only: [:edit, :update]
+  before_action :require_self, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -19,6 +21,8 @@ class UsersController < ApplicationController
     # render text: params.inspect
     @user = User.new(user_params)
     if @user.save
+      UserMailer.signup(@user).deliver
+      session[:user_id] = @user.id
       redirect_to @user
       # redirect_to "/users/#{@user.id}"
       # url_for @user
@@ -47,7 +51,14 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :bio, :avatar)
+    params.require(:user).permit(:username, :bio, :avatar, :password)
+  end
+
+  def require_self
+    unless @user == current_user
+      flash[:danger] = "This is not you."
+      redirect_to :root
+    end
   end
 
 end
