@@ -31,7 +31,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = @post.user
     @image = @post.image
     @most_popular = Post.where("id != ?", "#{params[:id]}").order(created_at: :desc).limit(4)
@@ -47,9 +46,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :user_id)
-  end
-
-  def most_popular
   end
 
 end

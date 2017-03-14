@@ -12,17 +12,17 @@
       <%= image_tag @user.avatar, class: "img-circle" %>
     </div>
     <div class="col-md-9 posts">
-      <% @user.posts.each do |p| %>
+      <% @user.posts.each do |post| %>
         <ul>
-          <li><%= link_to p.title, p %></li>
+          <li><%= link_to post.title, post %></li>
         </ul>
         <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-3 edit">
-      <%= link_to "Edit profile", edit_user_path, class: "btn btn-primary" %>
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-primary" %>
     </div>
   </div>
-  
+
 </div> <!--container-->

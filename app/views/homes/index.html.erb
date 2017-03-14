@@ -17,7 +17,7 @@
       </div>
       <div class="row post_body">
         <div class="col-md-12">
-          <%= render "posts/post" %>   <!--calls _post partial-->
+          <%= render partial: "posts/post", locals: { post: @post } %>   <!--calls _post partial; setting local variables in _post partial so that @post is not needed to render a post...needed for post#index -->
         </div>
       </div>
       <div class="row">
@@ -55,7 +55,7 @@
         <%= image_tag @user.avatar, class: "img-circle center-block img-responsive"%>
       </div>
       <div class="row username">
-        <%= link_to @user.username, "users/#{@user.id}" %>
+        <%= link_to @user.username, user_path(@user) %>
       </div>
       <div class="row user_social">
         <div class="col-md-12">
