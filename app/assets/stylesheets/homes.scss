@@ -70,6 +70,10 @@
   }
 }
 
+.main {
+  padding-bottom: 50px;
+}
+
 .title {
   padding-left: 15px;
 
@@ -127,8 +131,11 @@
         padding-left: 5px;
         padding-right: 8px;
         position: relative;
-      }
 
+        a {
+          color: black;
+        }
+      }
     }
   }
 

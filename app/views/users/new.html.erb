@@ -4,13 +4,14 @@
       <h1>Sign up</h1>
     </div>
   </div>
-  <% if flash.any? %>
+
+  <!-- <% if flash.any? %>
     <% flash.each do | klass, message | %>
     <div class="alert alert-<%= klass %>" role="alert">
       <p> <%= message %> </p>
     </div>
     <% end %>
-  <% end %>
+  <% end %> -->
 
   <div class="container">
     <%= simple_form_for @user, class: "form-horizontal" do |f| %>
@@ -24,6 +25,5 @@
     </div>
     <% end %>
   </div>
-
 
 </div>

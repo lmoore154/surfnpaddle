@@ -1,9 +1,14 @@
 <div class="post_body">
     <!-- < body = @post.body.split("\n") %> -->
     <!-- < simple_format body[0..1].join("\n\n") %> -->
-    <blockquote>
-      <%= post.fact %>
-    </blockquote>
+  <blockquote>
+    <%= post.fact %>
+  </blockquote>
     <!-- < simple_format body[2..-1].join("\n\n") %> -->
-    <%= post.body %>
+  <%= post.body %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag post.picture, class: "post_picture" %>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:show, :edit, :update]
-  before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :share, :send_share]
+  before_action :require_user, only: [:new, :create, :edit, :update, :destroy, :share, :send_share]
   before_action :owned_by, only: [:destroy]
 
   def index
@@ -45,6 +45,16 @@ class PostsController < ApplicationController
     redirect_to :root
   end
 
+  def share
+  end
+
+  def send_share
+    @share_with = params[:share][:share_with]
+    PostMailer.share(@post, @share_with, current_user).deliver
+    flash[:success] = "Email sent!"
+    redirect_to @post
+  end
+
 
   private
 
@@ -53,7 +63,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image, :picture)
   end
 
   def owned_by

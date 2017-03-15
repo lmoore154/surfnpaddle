@@ -2,9 +2,18 @@
   <%= @post.title %>
 <% end %>
 
+<% if flash.any? %>
+  <% flash.each do | klass, message | %>
+  <div class="alert alert-<%= klass %>" role="alert">
+    <p> <%= message %> </p>
+  </div>
+  <% end %>
+<% end %>
+
 <div class="container">
-  <div class="row">
+  <div class="row main">
     <div class="col-xs-9">
+      <div
       <div class="row title">
         <h2><%= @post.title %></h2>
       </div>
@@ -41,7 +50,7 @@
             <div class="glyph">
               <span class="glyphicon glyphicon-share-alt third_glyph" aria-hidden="true"></span>
               <div class="glyph_text">
-                Share This Post
+                <%= link_to "Share This Post", share_path(@post) %>
               </div>
             </div>
           </button>
@@ -111,7 +120,7 @@
       <div class="col-md-3 popular">
         <span class="bottom_titles"><%= post.title %></span>
         <%= link_to post do %>
-          <% image_tag post.image || post.user.avatar, class: "img-responsive center-block" %>
+          <% image_tag post.image_version || post.user.avatar, class: "img-responsive center-block" %>
         <% end %>
       </div>
     <% end %>
