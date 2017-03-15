@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :is_owner, only: [:destroy]
+  before_action :owned_by, only: [:destroy]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -41,7 +41,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_user.chirps.find(params[:id])
     @post.destroy
     redirect_to :root
   end
@@ -58,9 +57,9 @@ class PostsController < ApplicationController
   end
 
   def owned_by
-    @post = current_user.chirps.find_by(id: params[:id])
-    unless @chirp #&& @chirp.user == current_user
-      flash[:warning] = "That's not your post"
+    @post = current_user.posts.find_by(id: params[:id])
+    unless @post #&& @chirp.user == current_user
+      flash[:warning] = "That's not your purse! I don't know you!"
       redirect_to :root
     end
   end
