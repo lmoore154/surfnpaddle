@@ -57,7 +57,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 
-  def is_owner
+  def owned_by
     @post = current_user.chirps.find_by(id: params[:id])
     unless @chirp #&& @chirp.user == current_user
       flash[:warning] = "That's not your post"

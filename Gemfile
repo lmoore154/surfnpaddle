@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 gem 'simple_form'
+gem 'sendgrid-ruby'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

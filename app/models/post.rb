@@ -8,7 +8,7 @@ class Post < ApplicationRecord
             end
           }
 
-  def is_owner?(this_user)
+  def owned_by?(this_user)
     user == this_user
   end
 

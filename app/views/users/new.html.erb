@@ -1,3 +1,29 @@
-<h1>Sign up</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Sign up</h1>
+    </div>
+  </div>
+  <% if flash.any? %>
+    <% flash.each do | klass, message | %>
+    <div class="alert alert-<%= klass %>" role="alert">
+      <p> <%= message %> </p>
+    </div>
+    <% end %>
+  <% end %>
 
-<%= render "form" %>
+  <div class="container">
+    <%= simple_form_for @user, class: "form-horizontal" do |f| %>
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.input :email %>
+    <%= f.input :avatar %>
+    <%= f.input :bio %>
+    <div class="row submit_button">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+
+
+</div>

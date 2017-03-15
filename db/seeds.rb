@@ -15,7 +15,9 @@ images = (1..15).to_a
   user = User.create!(
     username: Faker::Cat.unique.name,
     bio: Faker::ChuckNorris.fact,
-    avatar: "otter#{o+1}.jpg"
+    avatar: "otter#{o+1}.jpg",
+    password: "password",
+    email: Faker::Internet.unique.safe_email
     )
 
   3.times do |i|
