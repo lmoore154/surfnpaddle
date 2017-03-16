@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update, :share, :send_share]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy, :share, :send_share]
-  before_action :owned_by, only: [:destroy]
+  before_action :owned_by, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -67,8 +67,12 @@ class PostsController < ApplicationController
   end
 
   def owned_by
-    @post = current_user.posts.find_by(id: params[:id])
-    unless @post #&& @chirp.user == current_user
+    if current_user.admin?
+      @post = Post.find_by(id: params[:id])
+    else
+      @post = current_user.posts.find_by(id: params[:id])
+    end
+    unless @post
       flash[:warning] = "That's not your purse! I don't know you!"
       redirect_to :root
     end

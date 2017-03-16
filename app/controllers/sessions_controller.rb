@@ -20,4 +20,16 @@ class SessionsController < ApplicationController
     redirect_to :root
   end
 
+  def forgot
+  end
+
+  def reset_password
+    @user = User.find_by(email: params[:reset_password][:email])
+    new_password = SecureRandom.hex(10)
+    @user.password = new_password
+    @user.save
+    RecoveryMailer.reset(@user, new_password).deliver
+    redirect_to :login
+  end
+
 end

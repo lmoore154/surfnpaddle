@@ -11,7 +11,7 @@ class Post < ApplicationRecord
           }
 
   def owned_by?(this_user)
-    user == this_user
+    user == this_user || this_user.admin?
   end
 
   def image_version(version = :bottom)
