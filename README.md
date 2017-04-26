@@ -1,4 +1,5 @@
 EXPLORER MODE
+
 To complete this assignment correctly, you must do the following tasks:
 - Create the Surf & Paddle web page from scratch based on the given image.
 - Make sure that it is as close to "pixel perfect" as possible with the original mockup.[1]
