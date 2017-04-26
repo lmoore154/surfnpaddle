@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update]
+  before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :owned_by, only: [:destroy]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -11,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    # @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to :root
     else
@@ -37,6 +40,11 @@ class PostsController < ApplicationController
     render "homes/index"
   end
 
+  def destroy
+    @post.destroy
+    redirect_to :root
+  end
+
 
   private
 
@@ -45,7 +53,15 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :user_id)
+    params.require(:post).permit(:title, :body)
+  end
+
+  def owned_by
+    @post = current_user.posts.find_by(id: params[:id])
+    unless @post #&& @chirp.user == current_user
+      flash[:warning] = "That's not your purse! I don't know you!"
+      redirect_to :root
+    end
   end
 
 end

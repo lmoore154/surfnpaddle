@@ -21,13 +21,21 @@
       </div>
       <p class="navbar-text">You Otter Know Blog</p>
       <div class="navbar-right">
-        <p class="navbar-text"><%= link_to "About", "/about" %></p>
-        <form class="navbar-form">
+        <p class="navbar-text"> <%= link_to "About", "/about" %> </p>
+        <% if current_user %>
+          <p class="navbar-text"> <%= link_to "My Profile", current_user %> </p>
+          <p class="navbar-text"> <%= link_to "Log Out", logout_path, method: :delete  %> </p>
+        <% else %>
+          <p class="navbar-text"> <%= link_to "Login", login_path %> </p>
+          <p class="navbar-text"> <%= link_to "Create Account", new_user_path %> </p>
+        <% end %>
+        <!-- <form class="navbar-form">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Search">
             <i class="glyphicon glyphicon-search form-control-feedback"></i>
           </div>
-        </form>
+
+        </form> -->
       </div>
     </nav>
 

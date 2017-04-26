@@ -4,7 +4,6 @@
 
 <div class="container">
   <div class="row">
-
     <div class="col-xs-9">
       <div class="row title">
         <h2><%= @post.title %></h2>
@@ -90,9 +89,15 @@
 </div>
 
 <div class="container">
+  <div class="row edit_delete">
+    <div class="col-md-9 make_new_post">
+      <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-primary new_post_btn" if @post.owned_by? current_user %>
+      <%= link_to "Delete this post", @post, method: :delete, class: "btn btn-danger new_post_btn" if @post.owned_by? current_user %>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-12 make_new_post">
-      <%= link_to "Make a new post", new_post_path, class: "btn btn-primary new_post_btn" %>
+    <div class="col-md-9 make_new_post">
+      <%= link_to "Make a new post", new_post_path, class: "btn btn-primary new_post_btn" if current_user %>
     </div>
   </div>
 </div>

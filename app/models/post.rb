@@ -7,4 +7,9 @@ class Post < ApplicationRecord
               "Your post title is #{(10 - data[:value].length)} characters too short."
             end
           }
+
+  def owned_by?(this_user)
+    user == this_user
+  end
+
 end
