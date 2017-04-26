@@ -1,0 +1,22 @@
+<h1> Hey, check this out! </h1>
+
+<p>
+  I saw this cool article on You Otter Know, and I thought you would like it!
+</p>
+
+<p><%= @post.title %></p>
+<p><%= @post.body %></p>
+<p>
+  <% if @post.picture? %>
+    <%= image_tag @post.picture %>
+  <% else %>
+    <%= image_tag @post.image %>
+  <% end %>
+</p>
+
+<h4>This post was written by <%= @post.user.username %></h4>
+<p>Want to connect? Send an email by clicking <%= mail_to @post.user.email, "here" %></p>
+
+<p>
+  Visit <%= link_to "You Otter Know", root_url %> to see some otterific posts.
+</p>

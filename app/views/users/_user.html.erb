@@ -10,6 +10,11 @@
   <div class="row">
     <div class="col-md-3 photo">
       <%= image_tag @user.avatar, class: "img-circle" %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= @user.bio %>
+        </div>
+      </div>
     </div>
     <div class="col-md-9 posts">
       <% @user.posts.each do |post| %>
@@ -21,7 +26,9 @@
   </div>
   <div class="row">
     <div class="col-md-3 edit">
-      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-primary" %>
+      <% if current_user == @user %>
+        <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 

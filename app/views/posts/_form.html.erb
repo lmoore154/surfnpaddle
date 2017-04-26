@@ -1,29 +1,11 @@
-<% if @post.errors.any? %>
-  <div class="bg-danger col-md-12">
-    <ul class="list-unstyled">
-      <% @post.errors.full_messages.each do |message| %>
-        <li>
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
+<div class="container">
+  <%= simple_form_for @post, class: "form-horizontal" do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :image %>
+  <%= f.input :picture %>
+  <div class="row submit_button">
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
-<%end%>
-
-<%= form_for @post do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-  <div>
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.map { |u| [u.username, u.id] }, include_blank: true %>
-  </div>
-  <div>
-    <%= f.submit class: "btn btn-success submit_post" %>
-  </div>
-<% end %>
+  <% end %>
+</div>

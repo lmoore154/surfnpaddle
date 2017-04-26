@@ -1,0 +1,11 @@
+<h1>Hey, <%= @user.username %>!</h1>
+
+<h3> Looks like you forgot your password, so we made a shiny new one for you! </h3>
+
+<p>
+  Your new password is <%= @new_password %>
+</p>
+
+<p>
+  Click <%= link_to "here", login_url %> to log in and set a new permanent password!
+</p>
